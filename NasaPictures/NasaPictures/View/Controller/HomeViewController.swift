@@ -40,13 +40,14 @@ class HomeViewController: UIViewController, ControllerFactory {
         self.addCalendarButton()
         self.registerNibs()
         self.setDate()
-    }
-        
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.fetchPicture()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.fetchPictureFromDb()
+    }
+            
     func addCalendarButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: ImageConstant.calendar), style: .plain, target: self, action: #selector(openDatePicker))
     }
@@ -86,6 +87,16 @@ extension HomeViewController {
                     self?.emptyView?.isHidden = false
                     let _ = self?.showAlert(message: error?.message() ?? AppConstant.invalidResponse)
                 }
+            }
+        }
+    }
+    
+    /** fetch pictures from db*/
+    func fetchPictureFromDb() {
+        self.viewModel.fetchLastPictureFromDb { [weak self] status, _ in
+            if status {
+                self?.emptyView?.isHidden = true
+                self?.tableView.reloadData()
             }
         }
     }

@@ -22,13 +22,11 @@ extension HomeViewModel {
             self.isFavouritePicture = PictureRepository.shared.isPictureFavourite(byDate: date)
         }
     }
+    
     /** Fetch last searched picture from database and fetch new picture from api */
     func fetchPicture(completion: @escaping (Bool, NetworkError?) -> Void) {
         if !refresh {
-            if let response = PictureRepository.shared.fetchLastPictureFromDb() {
-                saveFetchedPicture(response)
-                completion(true, nil)
-            }
+            fetchLastPictureFromDb(completion)
         }
         PictureRepository.shared.fetchPicture(dateString: self.toDateString()) { [weak self] response in
             if response != nil {
@@ -39,6 +37,14 @@ extension HomeViewModel {
             }
         } failure: { error in
             completion(false, error)
+        }
+    }
+    
+    /** fetch last picture from db*/
+    func fetchLastPictureFromDb(_ completion: (Bool, NetworkError?) -> Void) {
+        if let response = PictureRepository.shared.fetchLastPictureFromDb() {
+            saveFetchedPicture(response)
+            completion(true, nil)
         }
     }
     
