@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LastPictureModel" representedClassName="LastPictureModel" syncable="YES">
+        <attribute name="response" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PictureModel" representedClassName="PictureModel" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="explaination" optional="YES" attributeType="String"/>
+        <attribute name="mediaType" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="LastPictureModel" positionX="0" positionY="81" width="128" height="44"/>
+        <element name="PictureModel" positionX="-36" positionY="9" width="128" height="104"/>
+    </elements>
+</model>

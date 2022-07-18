@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jvh-EN-KVx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="6sa-pN-qRv">
+            <objects>
+                <tabBarController id="Jvh-EN-KVx" customClass="TabBarViewController" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uqj-1k-w27">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ldm-N0-Xdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="117"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="OhP-1S-40A">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4db-YU-pUX" customClass="HomeViewController" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qM6-kl-zLN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HnR-ah-N7m">
+                                <rect key="frame" x="0.0" y="60" width="414" height="802"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4db-YU-pUX" id="gdm-w0-pbl"/>
+                                    <outlet property="delegate" destination="4db-YU-pUX" id="CgE-pE-Fdb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K5w-Tl-529"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HnR-ah-N7m" firstAttribute="top" secondItem="K5w-Tl-529" secondAttribute="top" constant="16" id="HIy-ne-Vkz"/>
+                            <constraint firstItem="K5w-Tl-529" firstAttribute="trailing" secondItem="HnR-ah-N7m" secondAttribute="trailing" id="Qg9-eV-KmU"/>
+                            <constraint firstItem="K5w-Tl-529" firstAttribute="bottom" secondItem="HnR-ah-N7m" secondAttribute="bottom" id="VyG-bq-6fj"/>
+                            <constraint firstItem="HnR-ah-N7m" firstAttribute="leading" secondItem="K5w-Tl-529" secondAttribute="leading" id="qX4-00-XSe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="HnR-ah-N7m" id="oJL-d7-jbK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C91-Fm-R8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818" y="111"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="M8o-U2-pDc">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Y4-6s-iyt" customClass="DatePickerViewController" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QwZ-8h-PGo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yew-HL-cPa">
+                                <rect key="frame" x="24" y="231" width="366" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="0lG-iJ-olK">
+                                        <connections>
+                                            <action selector="cancelButtonAction:" destination="4Y4-6s-iyt" id="qjh-Yk-ShS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TGG-Hl-8cf"/>
+                                    <barButtonItem title="Ok" id="9gh-gg-5Sk" userLabel="Select">
+                                        <connections>
+                                            <action selector="selectButtonAction:" destination="4Y4-6s-iyt" id="mrg-1T-sJr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="DwF-fu-dAH">
+                                <rect key="frame" x="24" y="275" width="366" height="346"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SBE-Sl-FOD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DwF-fu-dAH" firstAttribute="top" secondItem="Yew-HL-cPa" secondAttribute="bottom" id="0ba-2Y-jtp"/>
+                            <constraint firstItem="SBE-Sl-FOD" firstAttribute="trailing" secondItem="DwF-fu-dAH" secondAttribute="trailing" constant="24" id="72D-WO-cGg"/>
+                            <constraint firstItem="SBE-Sl-FOD" firstAttribute="trailing" secondItem="Yew-HL-cPa" secondAttribute="trailing" constant="24" id="Cao-he-89R"/>
+                            <constraint firstItem="DwF-fu-dAH" firstAttribute="leading" secondItem="SBE-Sl-FOD" secondAttribute="leading" constant="24" id="XwN-0Q-5bR"/>
+                            <constraint firstItem="DwF-fu-dAH" firstAttribute="centerY" secondItem="QwZ-8h-PGo" secondAttribute="centerY" id="huQ-AT-qSf"/>
+                            <constraint firstItem="Yew-HL-cPa" firstAttribute="leading" secondItem="SBE-Sl-FOD" secondAttribute="leading" constant="24" id="kiI-Od-cYs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="DwF-fu-dAH" id="Jkp-bH-Zhb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBa-tY-7Nu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="826.33928571428567"/>
+        </scene>
+        <!--Favourite Details View Controller-->
+        <scene sceneID="Iic-XM-DaB">
+            <objects>
+                <viewController storyboardIdentifier="FavouriteDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cqh-HV-KkO" customClass="FavouriteDetailsViewController" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="chc-ih-LJp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="20n-Nv-CN0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cqh-HV-KkO" id="6BJ-WB-jj2"/>
+                                    <outlet property="delegate" destination="Cqh-HV-KkO" id="C5e-Un-qfv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18I-Ik-B4V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="18I-Ik-B4V" firstAttribute="trailing" secondItem="20n-Nv-CN0" secondAttribute="trailing" id="16D-zE-dPA"/>
+                            <constraint firstItem="20n-Nv-CN0" firstAttribute="leading" secondItem="18I-Ik-B4V" secondAttribute="leading" id="HL2-Hw-j56"/>
+                            <constraint firstItem="20n-Nv-CN0" firstAttribute="top" secondItem="18I-Ik-B4V" secondAttribute="top" id="OLn-Zq-wls"/>
+                            <constraint firstItem="18I-Ik-B4V" firstAttribute="bottom" secondItem="20n-Nv-CN0" secondAttribute="bottom" id="Xd5-dy-IHR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="20n-Nv-CN0" id="dTY-ls-OTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xT-fU-e5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707" y="842"/>
+        </scene>
+        <!--Favourites View Controller-->
+        <scene sceneID="488-ZE-icL">
+            <objects>
+                <viewController storyboardIdentifier="FavouritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXL-uY-7xX" customClass="FavouritesViewController" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mur-NL-xhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJZ-h1-Msm">
+                                <rect key="frame" x="0.0" y="60" width="414" height="802"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EXL-uY-7xX" id="BlL-18-Lpb"/>
+                                    <outlet property="delegate" destination="EXL-uY-7xX" id="Kpd-vU-r9v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d4O-bM-NqQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JJZ-h1-Msm" firstAttribute="top" secondItem="d4O-bM-NqQ" secondAttribute="top" constant="16" id="3D9-yS-trO"/>
+                            <constraint firstItem="JJZ-h1-Msm" firstAttribute="leading" secondItem="d4O-bM-NqQ" secondAttribute="leading" id="8cw-lM-cPv"/>
+                            <constraint firstItem="d4O-bM-NqQ" firstAttribute="bottom" secondItem="JJZ-h1-Msm" secondAttribute="bottom" id="Pm8-pT-UZS"/>
+                            <constraint firstItem="d4O-bM-NqQ" firstAttribute="trailing" secondItem="JJZ-h1-Msm" secondAttribute="trailing" id="te2-kg-mxd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="JJZ-h1-Msm" id="eor-7f-1Tf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDD-Bk-JOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674" y="110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
