@@ -20,7 +20,8 @@ class HomeViewController: UIViewController, ControllerFactory {
         }
         view.isHidden = true
         view.titleLabel.text = AppConstant.homeViewEmptyStateTitle
-        self.tableView.addSubview(view)
+        self.view.addSubview(view)
+        view.addFullViewConstraint()
         return view
     }()
     
